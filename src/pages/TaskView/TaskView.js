@@ -26,29 +26,28 @@ const TaskView = (props) => {
 
   const handleDelete = async (event) => {
     event.preventDefault();
-    const answer = await Api.fetchDelete(id);
-    const result = await answer;
-    props.history.push("/");
+    onCloseModal();      
+    const answer = await Api.fetchDelete(id);    
+    const result = await answer;      
     
   }
 
   return (
     <section className="view">
-      <div className="view-img">
-        <img src="https://via.placeholder.com/350x350" alt="PlaceHolder"></img>
-      </div>
-
-      <div className="view-info">
-        <p className="view-info-text"> Tarefa: {task.task} </p>
-        <p className="view-info-text"> Descrição: {task.description}</p>
-        <p className="view-info-text"> Prioridade: {task.priorities} </p>
-        <p className="view-info-text"> Status: {task.taskStaus} </p>
-        <p className="view-info-text"> Prazo: {task.deadline} </p>
-        <p className="view-info-text"> Data de Criação: {task.creationDate} </p>
-        <Link to={`/edit/${task._id}`}>
-          <button className="btn btn-sucess"> Editar </button>
-        </Link>
-        <button className="btn btn-danger" onClick={onOpenModal}>Excluir</button>
+      
+      <div className="card">
+        <div className="view-info">
+          <p className="view-info-text"> <b> Tarefa: </b> {task.task} </p>
+          <p className="view-info-text"> <b> Descrição: </b> {task.description}</p>
+          <p className="view-info-text"> <b> Prioridade: </b> {task.priorities} </p>
+          <p className="view-info-text"> <b>Status: </b> {task.taskStaus} </p>
+          <p className="view-info-text"> <b>Prazo: </b> {task.deadline} </p>
+          <p className="view-info-text"> <b> Data de Criação: </b> {task.creationDate} </p>
+          <Link to={`/edit/${task._id}`}>
+            <button className="btn btn-sucess"> Editar </button>
+          </Link>
+          <button className="btn btn-danger" onClick={onOpenModal}>Excluir</button>
+        </div>
       </div>
       <Modal open={open} onClose={onCloseModal} center
         classNames={{

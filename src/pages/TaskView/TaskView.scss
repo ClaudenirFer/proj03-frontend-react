@@ -5,18 +5,13 @@
   @include container;
   height: 100%;
   display: flex;
+  text-align: center;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: center;
   margin-top: 5%;
-  &-img {
-    width: 48%;
-    img {
-      width: 100%;
-      height: auto;
-    }
-  }
+ 
   &-info {
-    width: 48%;
+    
     &-text {
       font-size: 20px;
       line-height: 25px;
@@ -24,11 +19,26 @@
     }
   }
   
+  
 }
 
-.buttons {
+.card {
+  text-align: center;
+  
+}
+
+.btn-sucess {
+  margin: 50px;
+  
   @include buttons;
   background: $color-success;
+}
+
+.btn-danger {
+  margin: 50px;
+  
+  @include buttons;
+  background: $color-danger;
 }
 
 @keyframes customEnterOverlayAnimation {

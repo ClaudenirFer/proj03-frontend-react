@@ -1,7 +1,7 @@
-import React from 'react';
-import '../../style/style.scss';
-import './TaskAdd.scss';
-import { Api } from '../../api/api';
+import React from "react";
+import "../../style/style.scss";
+import "./TaskAdd.scss";
+import { Api } from "../../api/api";
 
 const TaskAdd = (props) => {
   const handleSubmit = async (event) => {
