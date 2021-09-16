@@ -1,5 +1,5 @@
 export const Api = {
-    url: 'http://localhost:3001/tasks',
+    url: process.env.REACT_APP_URL,
     fetchGet: () => fetch(Api.url),
     fetchGetById: (id) => fetch(Api.url + '/findById/' + id),
     fetchPost: (body) => {
